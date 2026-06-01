@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Architecture Flow - KopDes</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8fafc;display:flex;justify-content:center;padding:40px 20px;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+.diagram{position:relative;width:1100px;height:960px;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.06);padding:0}
+.card{position:absolute;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1.5px solid;transition:box-shadow .2s}
+.card-title{font-size:15px;font-weight:600;line-height:1.3}
+.card-sub{font-size:12px;font-weight:400;line-height:1.4;margin-top:4px;opacity:.75}
+.card-icon{font-size:18px;margin-bottom:2px}
+
+/* Colors */
+.blue{background:#eff6ff;border-color:#3b82f6;color:#1e40af}
+.purple{background:#f5f3ff;border-color:#8b5cf6;color:#5b21b6}
+.red{background:#fef2f2;border-color:#ef4444;color:#991b1b}
+.green{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.orange{background:#fff7ed;border-color:#f97316;color:#9a3412}
+.gray{background:#f3f4f6;border-color:#9ca3af;color:#4b5563}
+.teal{background:#f0fdfa;border-color:#14b8a6;color:#115e59}
+
+svg.connectors{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+
+.branch-label{position:absolute;font-size:11px;font-weight:600;color:#64748b;letter-spacing:.3px}
+.branch-label.fail{color:#ef4444}
+.branch-label.success{color:#22c55e}
+.return-label{position:absolute;font-size:12px;font-weight:500;color:#64748b}
+
+/* Division lines for role columns */
+.divider{position:absolute;width:1px;background:#e2e8f0}
+</style>
+</head>
+<body>
+
+<div class="diagram">
+  <!-- ===== CARDS ===== -->
+  <!-- 1. Buka aplikasi -->
+  <div class="card blue" style="left:460px;top:40px;width:180px;height:46px">
+    <div class="card-title">Buka aplikasi</div>
+  </div>
+
+  <!-- 2. Halaman login -->
+  <div class="card blue" style="left:430px;top:116px;width:240px;height:70px">
+    <div class="card-title">Halaman login</div>
+    <div class="card-sub">No. HP / NIK + PIN / Password</div>
+  </div>
+
+  <!-- 3. Validasi kredensial -->
+  <div class="card purple" style="left:430px;top:216px;width:240px;height:70px">
+    <div class="card-title">Validasi kredensial</div>
+  </div>
+
+  <!-- 4a. Gagal (fail) -->
+  <div class="card red" style="left:185px;top:326px;width:190px;height:60px">
+    <div class="card-title">Gagal</div>
+    <div class="card-sub">Tampil pesan error</div>
+  </div>
+
+  <!-- 4b. Cek role pengguna -->
+  <div class="card purple" style="left:445px;top:326px;width:210px;height:60px">
+    <div class="card-title">Cek role pengguna</div>
+  </div>
+
+  <!-- 5a-d. Role cards -->
+  <!-- Super Admin -->
+  <div class="card blue" style="left:165px;top:435px;width:170px;height:70px">
+    <div class="card-title">Super Admin</div>
+    <div class="card-sub">Nakala / Romulus</div>
+  </div>
+  <!-- Admin Desa -->
+  <div class="card green" style="left:365px;top:435px;width:170px;height:70px">
+    <div class="card-title">Admin Desa</div>
+    <div class="card-sub">Kepala desa / staf</div>
+  </div>
+  <!-- Pengurus Kopdes -->
+  <div class="card orange" style="left:565px;top:435px;width:170px;height:70px">
+    <div class="card-title">Pengurus Kopdes</div>
+    <div class="card-sub">KDMP / Koperasi</div>
+  </div>
+  <!-- Pengurus BUMDes -->
+  <div class="card gray" style="left:765px;top:435px;width:170px;height:70px">
+    <div class="card-title">Pengurus BUMDes</div>
+    <div class="card-sub">Manajer unit usaha</div>
+  </div>
+
+  <!-- 6a-d. Dashboard cards -->
+  <!-- UMKM / Petani -->
+  <div class="card blue" style="left:165px;top:535px;width:170px;height:70px">
+    <div class="card-title">UMKM / Petani</div>
+    <div class="card-sub">Produsen lokal</div>
+  </div>
+  <!-- Operator MBG -->
+  <div class="card green" style="left:365px;top:535px;width:170px;height:70px">
+    <div class="card-title">Operator MBG</div>
+    <div class="card-sub">Sekolah / penerima</div>
+  </div>
+  <!-- Warga desa -->
+  <div class="card orange" style="left:565px;top:535px;width:170px;height:70px">
+    <div class="card-title">Warga desa</div>
+    <div class="card-sub">Marketplace / beli</div>
+  </div>
+  <!-- Pemda / Viewer -->
+  <div class="card gray" style="left:765px;top:535px;width:170px;height:70px">
+    <div class="card-title">Pemda / Viewer</div>
+    <div class="card-sub">Read-only laporan</div>
+  </div>
+
+  <!-- 7. Dashboard sesuai role -->
+  <div class="card teal" style="left:440px;top:655px;width:220px;height:55px">
+    <div class="card-title">Dashboard sesuai role</div>
+  </div>
+
+  <!-- 8. Sesi aktif / JWT -->
+  <div class="card teal" style="left:415px;top:740px;width:270px;height:70px">
+    <div class="card-title">Sesi aktif / JWT / session token</div>
+    <div class="card-sub">Auto-refresh &bull; expire 8 jam &bull; remember me 30 hari</div>
+  </div>
+
+  <!-- 9. Logout -->
+  <div class="card gray" style="left:445px;top:840px;width:210px;height:60px">
+    <div class="card-title">Logout / sesi berakhir</div>
+    <div class="card-sub">Hapus token, kembali ke login</div>
+  </div>
+
+  <!-- ===== SVG CONNECTORS ===== -->
+  <svg class="connectors" viewBox="0 0 1100 960" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+      </marker>
+      <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+      </marker>
+      <marker id="arrow-dotted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+      </marker>
+    </defs>
+
+    <!-- A. Buka aplikasi → Halaman login -->
+    <line x1="550" y1="86" x2="550" y2="111" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- B. Halaman login → Validasi kredensial -->
+    <line x1="550" y1="186" x2="550" y2="211" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- C. Validasi → branch point + branches -->
+    <!-- Main drop to branch point -->
+    <line x1="550" y1="286" x2="550" y2="296" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Left branch (fail) → Gagal -->
+    <polyline points="550,296 280,296 280,321" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+    <!-- Right branch (success) → Cek role -->
+    <line x1="550" y1="296" x2="550" y2="321" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- D. Dotted return arrow (Gagal → Validasi) -->
+    <path d="M 280 386 L 370 386 Q 385 386 385 370 L 385 300 Q 385 290 400 290 L 418 290" 
+          stroke="#94a3b8" stroke-width="1.5" fill="none" 
+          stroke-dasharray="5,4" marker-end="url(#arrow-dotted)"/>
+
+    <!-- E. Cek role → 4-column spread -->
+    <!-- Main drop -->
+    <line x1="550" y1="386" x2="550" y2="405" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Horizontal spread -->
+    <line x1="250" y1="405" x2="850" y2="405" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Drops to each role card -->
+    <line x1="250" y1="405" x2="250" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="450" y1="405" x2="450" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="650" y1="405" x2="650" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="850" y1="405" x2="850" y2="430" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- F. Role cards → Dashboard cards -->
+    <line x1="250" y1="505" x2="250" y2="530" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="450" y1="505" x2="450" y2="530" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="650" y1="505" x2="650" y2="530" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="850" y1="505" x2="850" y2="530" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- G. Dashboard cards → Merge → Dashboard sesuai role -->
+    <!-- Drops to merge line -->
+    <line x1="250" y1="605" x2="250" y2="625" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="450" y1="605" x2="450" y2="625" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="650" y1="605" x2="650" y2="625" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="850" y1="605" x2="850" y2="625" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Horizontal merge -->
+    <line x1="250" y1="625" x2="850" y2="625" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Center drop to Dashboard sesuai role -->
+    <line x1="550" y1="625" x2="550" y2="650" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- H. Dashboard sesuai role → Sesi aktif -->
+    <line x1="550" y1="710" x2="550" y2="735" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- I. Sesi aktif → Logout -->
+    <line x1="550" y1="810" x2="550" y2="835" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </svg>
+
+  <!-- ===== BRANCH LABELS ===== -->
+  <div class="branch-label fail" style="left:370px;top:290px">Gagal</div>
+  <div class="branch-label success" style="left:562px;top:290px">Sukses</div>
+  <div class="return-label" style="left:350px;top:360px">Coba lagi</div>
+
+  <!-- ===== DIVIDER LINES FOR 4 COLUMNS ===== -->
+  <div class="divider" style="left:320px;top:440px;height:160px"></div>
+  <div class="divider" style="left:520px;top:440px;height:160px"></div>
+  <div class="divider" style="left:720px;top:440px;height:160px"></div>
+
+</div>
+
+</body>
+</html>
