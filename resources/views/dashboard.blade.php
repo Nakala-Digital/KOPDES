@@ -8,6 +8,9 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -183,11 +186,11 @@
                     <p>Kelola data dan pantau perkembangan ekonomi desa secara real-time</p>
                 </div>
                 <button class="export-btn" id="export-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="export-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
                     </svg>
                     Export Laporan
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    <svg class="export-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
             </div>
 
@@ -234,7 +237,7 @@
                 <article class="stat-card" id="stat-kopdes">
                     <div class="stat-card-icon" style="background: #fffbeb; color: #d97706;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8H4Z M14 20v-3a2 2 0 0 1 4 0v3 M7 20v-1a2 2 0 0 1 4 0v1 M6 15h2 M11 15h2 M3 11l8-6h9v5"/>
+                            <path d="M3 10.5 12 4.5l9 6"/><path d="M5 10.5V20h14V10.5"/><path d="M5 20h14"/><path d="M10 20v-4.5h4V20"/><path d="M8 12.5h2.5v2.5H8z"/><path d="M13.5 12.5H16v2.5h-2.5z"/>
                         </svg>
                     </div>
                     <div>
@@ -245,28 +248,19 @@
                 </article>
 
                 <article class="stat-card" id="stat-bumdes">
-                    <div class="stat-card-icon" style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(180deg, #f7f2ff 0%, #ece2ff 100%); box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04), 0 8px 20px rgba(139, 92, 246, 0.12); color: #6d3df0;">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width: 28px; height: 28px; display: block;">
-                            <g stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5.5 10.5 12 5l6.5 5.5"/>
-                                <path d="M6.5 10.5V20h11V10.5"/>
-                                <rect x="8.5" y="12.6" width="2" height="2" rx="0.35"/>
-                                <rect x="13.5" y="12.6" width="2" height="2" rx="0.35"/>
-                                <path d="M9 16h6"/>
-                                <path d="M10.5 20v-4.5h3V20"/>
-                            </g>
+                    <div class="stat-card-icon" style="background: #f0e6ff; color: #7c3aed;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5.5 10.5 12 5l6.5 5.5"/><path d="M6.5 10.5V20h11V10.5"/><rect x="8.5" y="12.6" width="2" height="2" rx="0.35"/><rect x="13.5" y="12.6" width="2" height="2" rx="0.35"/><path d="M9 16h6"/><path d="M10.5 20v-4.5h3V20"/>
                         </svg>
                     </div>
-                    <div style="min-width: 0;">
-                        <p class="stat-card-label" style="font-size: 14px; font-weight: 500; color: #374151; margin: 0 0 4px;">BUMDes</p>
-                        <p class="stat-card-value" style="font-size: 28px; line-height: 1; margin: 0 0 8px;">2</p>
-                        <p class="stat-card-change" style="display: flex; align-items: center; gap: 4px; margin: 0; color: #16a34a; font-size: 12px; font-weight: 500;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px; height: 13px; flex-shrink: 0;">
-                                <path d="M12 20V9"/>
-                                <path d="M8 13.5 12 9l4 4.5"/>
-                                <path d="M5 16.5c2.5 0 4.5-2 4.5-4.5S7.5 7.5 5 7.5C5 10 4 12 4 12s1 2 1 4.5Z"/>
-                            </svg>
-                            <span>Aktif</span>
+                    <div>
+                        <p class="stat-card-label">BUMDes</p>
+                        <p class="stat-card-value">2</p>
+                        <p class="stat-card-change" style="display: flex; align-items: center; gap: 3px;">
+                            <span style="color: #16a34a; display: flex; align-items: center; font-weight: 600; gap: 2px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px;"><path d="m7 17 10-10"/><path d="M17 17V7H7"/></svg>
+                                Aktif
+                            </span>
                         </p>
                     </div>
                 </article>
@@ -344,7 +338,7 @@
                                 <span class="donut-legend-value">10%</span>
                             </div>
                             <div class="donut-legend-item">
-                                <span class="donut-legend-label"><span class="donut-legend-dot" style="background: #ef4444;"></span> Lainnya</span>
+                                <span class="donut-legend-label"><span class="donut-legend-dot" style="background: #f472b6;"></span> Lainnya</span>
                                 <span class="donut-legend-value">5%</span>
                             </div>
                         </div>
@@ -366,33 +360,33 @@
 
                     <div class="mbg-stats">
                         <div class="mbg-stat-item">
-                            <div class="mbg-stat-icon" style="background: #eff6ff; color: #3b82f6;">
+                            <div class="mbg-stat-icon" style="background: #dcfce7; color: #16a34a;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+                                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
                                 </svg>
                             </div>
-                            <p class="mbg-stat-value">2.850</p>
                             <p class="mbg-stat-label">Total Demand</p>
-                            <p class="mbg-stat-label" style="color: var(--text-muted);">Porsi</p>
+                            <p class="mbg-stat-value">2.850</p>
+                            <p class="mbg-stat-unit">Porsi</p>
                         </div>
                         <div class="mbg-stat-item">
-                            <div class="mbg-stat-icon" style="background: #dcfce7; color: #16a34a;">
+                            <div class="mbg-stat-icon" style="background: #eff6ff; color: #2563eb;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
                                 </svg>
                             </div>
-                            <p class="mbg-stat-value">2.430</p>
                             <p class="mbg-stat-label">Total Suplai</p>
-                            <p class="mbg-stat-label" style="color: var(--text-muted);">Porsi</p>
+                            <p class="mbg-stat-value">2.430</p>
+                            <p class="mbg-stat-unit">Porsi</p>
                         </div>
                         <div class="mbg-stat-item">
                             <div class="mbg-stat-icon" style="background: #fef3c7; color: #d97706;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/>
                                 </svg>
                             </div>
-                            <p class="mbg-stat-value">85,3%</p>
                             <p class="mbg-stat-label">Pemenuhan</p>
+                            <p class="mbg-stat-value">85,3%</p>
                             <p class="mbg-stat-change negative">-2,1% dari bulan lalu</p>
                         </div>
                     </div>
@@ -416,7 +410,7 @@
                     </div>
 
                     <div class="umkm-list-item">
-                        <div class="umkm-avatar" style="background: #fef3c7;">🍌</div>
+                        <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=150&h=150&fit=crop" alt="Keripik Pisang Makmur" class="umkm-avatar">
                         <div class="umkm-info">
                             <p class="umkm-name">Keripik Pisang Makmur</p>
                             <p class="umkm-category">Makanan & Minuman</p>
@@ -425,7 +419,7 @@
                     </div>
 
                     <div class="umkm-list-item">
-                        <div class="umkm-avatar" style="background: #e0e7ff;">👖</div>
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=150&h=150&fit=crop" alt="Denimji Craft" class="umkm-avatar">
                         <div class="umkm-info">
                             <p class="umkm-name">Denimji Craft</p>
                             <p class="umkm-category">Kerajinan Tangan</p>
@@ -434,7 +428,7 @@
                     </div>
 
                     <div class="umkm-list-item">
-                        <div class="umkm-avatar" style="background: #dcfce7;">🐄</div>
+                        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=150&h=150&fit=crop" alt="Ternak Sapi Berkah" class="umkm-avatar">
                         <div class="umkm-info">
                             <p class="umkm-name">Ternak Sapi Berkah</p>
                             <p class="umkm-category">Peternakan</p>
@@ -453,7 +447,10 @@
                     <div class="notif-item">
                         <div class="notif-icon" style="background: #dcfce7; color: #16a34a;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/>
+                                <path d="M9 2h6v4H9z"/>
+                                <path d="M5 17V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9"/>
+                                <circle cx="12" cy="11" r="2"/>
+                                <path d="M3 17h18v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2z"/>
                             </svg>
                         </div>
                         <div class="notif-content">
@@ -464,9 +461,10 @@
                     </div>
 
                     <div class="notif-item">
-                        <div class="notif-icon" style="background: #fef3c7; color: #d97706;">
+                        <div class="notif-icon" style="background: #eff6ff; color: #2563eb;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+                                <path d="M16 16a2 2 0 0 1-2 2H8l-4 4v-4H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                                <path d="M12 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v10l-4-4h-2"/>
                             </svg>
                         </div>
                         <div class="notif-content">
@@ -477,9 +475,12 @@
                     </div>
 
                     <div class="notif-item">
-                        <div class="notif-icon" style="background: #eff6ff; color: #3b82f6;">
+                        <div class="notif-icon" style="background: #fef3c7; color: #d97706;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <circle cx="12" cy="14" r="3"/>
+                                <line x1="10.5" y1="14" x2="13.5" y2="14"/>
                             </svg>
                         </div>
                         <div class="notif-content">
@@ -498,21 +499,8 @@
                 </div>
                 <div class="footer-right">
                     <span class="footer-partner-text">Nakala Digital × Romulus Digital<br>Strategic Partner – Singapore/Vietnam</span>
-                    <span class="footer-logo footer-logo-nakala">
-                        <svg width="18" height="18" viewBox="0 0 40 40" fill="none">
-                            <rect width="40" height="40" rx="6" fill="#0f1b4c"/>
-                            <path d="M12 10h4l6 10-6 10h-4l6-10-6-10z" fill="#fff"/>
-                            <path d="M18 10h4l6 10-6 10h-4l6-10-6-10z" fill="rgba(255,255,255,0.5)"/>
-                        </svg>
-                        Nakala Digital
-                    </span>
-                    <span class="footer-logo footer-logo-romulus">
-                        <svg width="18" height="18" viewBox="0 0 40 40" fill="none">
-                            <rect width="40" height="40" rx="6" fill="#1a1d2e"/>
-                            <text x="10" y="27" font-size="18" font-weight="700" fill="#fff" font-family="Inter, sans-serif">R</text>
-                        </svg>
-                        Romulus
-                    </span>
+                    <img src="{{ asset('assets/desahub/logo-nakala-transparent.png') }}" alt="Nakala Digital" style="height: 32px; width: auto; margin-left: 16px;">
+                    <img src="{{ asset('assets/desahub/logo-romulus-biru.png') }}" alt="Romulus" style="height: 32px; width: auto; margin-left: 16px;">
                 </div>
             </footer>
 
@@ -554,8 +542,8 @@
                         legend: { display: false },
                         tooltip: {
                             backgroundColor: '#1a1d2e',
-                            titleFont: { family: 'Inter', size: 12 },
-                            bodyFont: { family: 'Inter', size: 12 },
+                            titleFont: { family: 'Poppins', size: 12 },
+                            bodyFont: { family: 'Poppins', size: 12 },
                             padding: 10,
                             cornerRadius: 8,
                             callbacks: {
@@ -566,14 +554,15 @@
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: { font: { family: 'Inter', size: 11 }, color: '#9ca3af' },
+                            ticks: { font: { family: 'Poppins', size: 11 }, color: '#9ca3af' },
                             border: { display: false }
                         },
                         y: {
                             grid: { color: '#f3f4f6' },
                             ticks: {
-                                font: { family: 'Inter', size: 11 },
+                                font: { family: 'Poppins', size: 11 },
                                 color: '#9ca3af',
+                                stepSize: 50,
                                 callback: (v) => v === 0 ? '0' : v + ' jt',
                             },
                             border: { display: false },
@@ -594,7 +583,7 @@
                     labels: ['Pangan & Hasil Pertanian', 'Perdagangan & Jasa', 'Peternakan & Perikanan', 'Kerajinan & Industri', 'Lainnya'],
                     datasets: [{
                         data: [45, 25, 15, 10, 5],
-                        backgroundColor: ['#2d5cf6', '#22c55e', '#f59e0b', '#a855f7', '#ef4444'],
+                        backgroundColor: ['#2d5cf6', '#22c55e', '#f59e0b', '#a855f7', '#f472b6'],
                         borderWidth: 3,
                         borderColor: '#ffffff',
                         hoverOffset: 6,
@@ -608,8 +597,8 @@
                         legend: { display: false },
                         tooltip: {
                             backgroundColor: '#1a1d2e',
-                            titleFont: { family: 'Inter', size: 12 },
-                            bodyFont: { family: 'Inter', size: 12 },
+                            titleFont: { family: 'Poppins', size: 12 },
+                            bodyFont: { family: 'Poppins', size: 12 },
                             padding: 10,
                             cornerRadius: 8,
                             callbacks: {
