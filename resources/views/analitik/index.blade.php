@@ -105,9 +105,13 @@
                 <x-sidebar-icon name="dashboard-analitik" />
                 <span>Dashboard & Analitik</span>
             </a>
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href="{{ route('laporan.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="laporan" />
                 <span>Laporan</span>
+            </a>
+            <a href="{{ route('pengaturan.index') }}" class="sidebar-link">
+                <x-sidebar-icon name="pengaturan" />
+                <span>Pengaturan</span>
             </a>
         </nav>
 
