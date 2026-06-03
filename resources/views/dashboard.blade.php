@@ -102,7 +102,7 @@
             </a>
 
             <p class="sidebar-category">Keuangan</p>
-            <a href="{{ route('kopdes.index') }}" class="sidebar-link">
+            <a href="{{ route('keuangan.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="keuangan" />
                 <span>Keuangan & Transaksi</span>
             </a>
