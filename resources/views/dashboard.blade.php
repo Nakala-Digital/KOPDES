@@ -35,18 +35,8 @@
     {{-- ===== SIDEBAR ===== --}}
     <aside class="sidebar" data-sidebar>
         {{-- Brand --}}
-        <div class="sidebar-brand">
-            <div class="sidebar-brand-icon">
-                <svg viewBox="0 0 40 40" fill="none">
-                    <rect width="40" height="40" rx="10" fill="#2d5cf6"/>
-                    <path d="M12 10h4l6 10-6 10h-4l6-10-6-10z" fill="#fff"/>
-                    <path d="M18 10h4l6 10-6 10h-4l6-10-6-10z" fill="rgba(255,255,255,0.5)"/>
-                </svg>
-            </div>
-            <div class="sidebar-brand-text" data-sidebar-brand-text>
-                <h1>DesaHub</h1>
-                <p>Ekosistem Ekonomi Desa</p>
-            </div>
+        <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
+            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
         </div>
 
         {{-- Navigation --}}
@@ -154,10 +144,10 @@
             </button>
 
             <div class="topbar-user" style="position: relative;" id="user-dropdown-trigger">
-                <img src="https://i.pravatar.cc/150?img=11" alt="User Avatar" class="topbar-user-avatar" />
+                <img src="{{ asset('assets/desahub/kepala-desa.png') }}" alt="User Avatar" class="topbar-user-avatar" style="object-fit: cover;" />
                 <div class="topbar-user-info">
-                    <div class="topbar-user-name">{{ $roleLabel }}</div>
-                    <div class="topbar-user-role">{{ $villageName }}</div>
+                    <div class="topbar-user-name">Kepala Desa</div>
+                    <div class="topbar-user-role">Desa Maju</div>
                 </div>
                 <svg class="topbar-user-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
 
