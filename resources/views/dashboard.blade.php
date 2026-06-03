@@ -111,7 +111,7 @@
             </a>
 
             <p class="sidebar-category">Laporan</p>
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href="{{ route('analitik.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="dashboard-analitik" />
                 <span>Dashboard & Analitik</span>
             </a>
