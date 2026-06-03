@@ -109,6 +109,10 @@
                 <x-sidebar-icon name="laporan" />
                 <span>Laporan</span>
             </a>
+            <a href="{{ route('pengaturan.index') }}" class="sidebar-link">
+                <x-sidebar-icon name="pengaturan" />
+                <span>Pengaturan</span>
+            </a>
         </nav>
 
         {{-- Collapse Button --}}
