@@ -318,55 +318,8 @@
                         <a href="#" style="font-size: 11px; color: var(--primary); font-weight: 600; text-decoration: none;">Lihat Peta Lengkap</a>
                     </div>
                     {{-- Enhanced Mock Map --}}
-                    <div style="position: relative; height: 300px; background: linear-gradient(160deg, #4a8c5c 0%, #5a9e6a 15%, #6aaf78 30%, #5a9e6a 50%, #4a8c5c 70%, #5a9e6a 85%, #6aaf78 100%); border-radius: 10px; overflow: hidden;">
-                        {{-- Terrain texture overlay --}}
-                        <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.06) 0%, transparent 40%), radial-gradient(ellipse at 50% 80%, rgba(0,0,0,0.05) 0%, transparent 40%);"></div>
-                        {{-- Field patches --}}
-                        <div style="position: absolute; top: 8%; left: 5%; width: 70px; height: 45px; background: rgba(139,195,74,0.25); border-radius: 4px; border: 1px solid rgba(139,195,74,0.3); transform: rotate(-3deg);"></div>
-                        <div style="position: absolute; top: 65%; right: 10%; width: 85px; height: 35px; background: rgba(139,195,74,0.2); border-radius: 4px; border: 1px solid rgba(139,195,74,0.25); transform: rotate(2deg);"></div>
-                        <div style="position: absolute; top: 40%; left: 60%; width: 55px; height: 40px; background: rgba(255,235,59,0.12); border-radius: 4px; border: 1px solid rgba(255,235,59,0.15); transform: rotate(-5deg);"></div>
-                        <div style="position: absolute; top: 75%; left: 25%; width: 60px; height: 30px; background: rgba(139,195,74,0.2); border-radius: 4px; border: 1px solid rgba(139,195,74,0.25);"></div>
-                        {{-- Roads --}}
-                        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 700 300">
-                            <path d="M 0 130 Q 120 120, 250 150 Q 380 180, 500 130 Q 620 80, 700 120" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
-                            <path d="M 200 0 Q 220 60, 250 120 Q 270 160, 250 200 Q 230 250, 260 300" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2.5"/>
-                            <path d="M 450 0 Q 470 80, 500 130 Q 510 160, 480 220 Q 460 260, 490 300" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                            <path d="M 0 230 Q 150 210, 300 240 Q 450 270, 600 230 Q 650 220, 700 240" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                        </svg>
-                        {{-- River --}}
-                        <svg style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 700 300">
-                            <path d="M 0 190 Q 80 170, 170 200 Q 280 240, 380 190 Q 480 140, 580 170 Q 640 190, 700 175" fill="none" stroke="rgba(66,165,245,0.55)" stroke-width="7" stroke-linecap="round"/>
-                            <path d="M 0 193 Q 80 173, 170 203 Q 280 243, 380 193 Q 480 143, 580 173 Q 640 193, 700 178" fill="none" stroke="rgba(66,165,245,0.25)" stroke-width="12" stroke-linecap="round"/>
-                            <path d="M 130 0 Q 160 60, 170 120 Q 175 160, 170 200" fill="none" stroke="rgba(66,165,245,0.35)" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-
-                        {{-- Marker: Dusun Sukamaju --}}
-                        <div style="position: absolute; top: 20%; left: 15%;">
-                            <div style="width: 16px; height: 16px; border-radius: 50%; background: #16a34a; border: 2.5px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.35);"></div>
-                            <div style="position: absolute; top: -24px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 2px 8px; border-radius: 4px; font-size: 9.5px; font-weight: 700; color: var(--sidebar-bg); white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">Dusun Sukamaju</div>
-                        </div>
-                        {{-- Marker: Dusun Mekarjaya --}}
-                        <div style="position: absolute; top: 25%; right: 22%;">
-                            <div style="width: 16px; height: 16px; border-radius: 50%; background: #ea580c; border: 2.5px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.35);"></div>
-                            <div style="position: absolute; top: -24px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 2px 8px; border-radius: 4px; font-size: 9.5px; font-weight: 700; color: var(--sidebar-bg); white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">Dusun Mekarjaya</div>
-                        </div>
-                        {{-- Marker: Dusun Cibeureum --}}
-                        <div style="position: absolute; top: 58%; left: 32%;">
-                            <div style="width: 16px; height: 16px; border-radius: 50%; background: #2563eb; border: 2.5px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.35);"></div>
-                            <div style="position: absolute; top: -24px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 2px 8px; border-radius: 4px; font-size: 9.5px; font-weight: 700; color: var(--sidebar-bg); white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">Dusun Cibeureum</div>
-                        </div>
-                        {{-- Marker: Dusun Sukaresmi --}}
-                        <div style="position: absolute; top: 42%; right: 10%;">
-                            <div style="width: 16px; height: 16px; border-radius: 50%; background: #7e22ce; border: 2.5px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.35);"></div>
-                            <div style="position: absolute; top: -24px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 2px 8px; border-radius: 4px; font-size: 9.5px; font-weight: 700; color: var(--sidebar-bg); white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">Dusun Sukaresmi</div>
-                        </div>
-                        {{-- Extra scattered markers --}}
-                        <div style="position: absolute; top: 70%; left: 52%;"><div style="width: 10px; height: 10px; border-radius: 50%; background: #d97706; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.25);"></div></div>
-                        <div style="position: absolute; top: 32%; left: 50%;"><div style="width: 10px; height: 10px; border-radius: 50%; background: #db2777; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.25);"></div></div>
-                        <div style="position: absolute; top: 48%; left: 6%;"><div style="width: 10px; height: 10px; border-radius: 50%; background: #16a34a; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.25);"></div></div>
-                        <div style="position: absolute; top: 15%; left: 42%;"><div style="width: 9px; height: 9px; border-radius: 50%; background: #ea580c; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.2);"></div></div>
-                        <div style="position: absolute; top: 80%; right: 30%;"><div style="width: 9px; height: 9px; border-radius: 50%; background: #2563eb; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.2);"></div></div>
-                        <div style="position: absolute; top: 38%; left: 72%;"><div style="width: 9px; height: 9px; border-radius: 50%; background: #16a34a; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.2);"></div></div>
+                    <div style="position: relative; height: 300px; border-radius: 10px; overflow: hidden; background: #e2e8f0;">
+                        <img src="{{ asset('assets/desahub/peta potensi desa.png') }}" alt="Peta Sebaran Potensi" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
                     </div>
                 </div>
 
