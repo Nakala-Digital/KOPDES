@@ -51,7 +51,7 @@
                 <x-sidebar-icon name="pendataan-desa" />
                 <span>Pendataan Desa</span>
             </a>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link">
+            <a href="{{ route('penduduk.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="penduduk" />
                 <span>Penduduk</span>
             </a>
@@ -493,8 +493,8 @@
                 </div>
                 <div class="footer-right">
                     <span class="footer-partner-text">Nakala Digital × Romulus Digital<br>Strategic Partner – Singapore/Vietnam</span>
-                    <img src="{{ asset('assets/desahub/logo-nakala-transparent.png') }}" alt="Nakala Digital" style="height: 32px; width: auto; margin-left: 16px;">
-                    <img src="{{ asset('assets/desahub/logo-romulus-biru.png') }}" alt="Romulus" style="height: 32px; width: auto; margin-left: 16px;">
+                    <img src="{{ asset('assets/desahub/logo-nakala-transparent.png') }}" alt="Nakala Digital" style="height: 40px; width: auto; margin-left: 16px;">
+                    <img src="{{ asset('assets/desahub/logo-romulus-biru.png') }}" alt="Romulus" style="height: 40px; width: auto; margin-left: 16px;">
                 </div>
             </footer>
 

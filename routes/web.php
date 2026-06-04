@@ -10,6 +10,7 @@ use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\AnalitikController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PengaturanController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/pendataan/aset', [PendataanController::class, 'storeAsset'])->name('pendataan.aset.store');
     Route::post('/pendataan/umkm', [PendataanController::class, 'storeUmkm'])->name('pendataan.umkm.store');
     Route::post('/pendataan/export', [PendataanController::class, 'export'])->name('pendataan.export');
+
+    Route::get('/penduduk', [PendudukController::class, 'index'])->name('penduduk.index');
 
     Route::get('/kopdes', [KopdesController::class, 'index'])->name('kopdes.index');
     Route::get('/kopdes/members', [KopdesController::class, 'index'])->defaults('feature', 'members')->name('kopdes.members.page');
