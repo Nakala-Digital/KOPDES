@@ -8,6 +8,9 @@ use App\Http\Controllers\KopdesController;
 use App\Http\Controllers\MbgController;
 use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\AnalitikController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PengaturanController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -90,6 +93,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/mbg/reports/monthly', [MbgController::class, 'report'])->name('mbg.reports.monthly');
 
     Route::get('/keuangan', [KeuanganController::class, 'index'])->name('keuangan.index');
+
+    Route::get('/analitik', [AnalitikController::class, 'index'])->name('analitik.index');
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
 });
 
 Route::post('/auth/pin-reset/request', [AuthController::class, 'requestPinReset'])->name('auth.pin-reset.request');
