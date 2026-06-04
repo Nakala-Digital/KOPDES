@@ -203,7 +203,7 @@
                 {{-- Lahan Pertanian --}}
                 <article class="stat-card" style="border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px;">
                     <div class="stat-card-icon" style="background: #dcfce7; color: #16a34a; width: 40px; height: 40px; border-radius: 10px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25z"/></svg>
                     </div>
                     <div>
                         <p class="stat-card-label" style="font-weight: 600; color: #64748b; font-size: 11px; margin-bottom: 2px;">Lahan Pertanian</p>
@@ -256,8 +256,8 @@
 
                 {{-- Perkebunan --}}
                 <article class="stat-card" style="border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px;">
-                    <div class="stat-card-icon" style="background: #dcfce7; color: #16a34a; width: 40px; height: 40px; border-radius: 10px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 1 20 0h-3"/><path d="M8 12a4 4 0 0 1 8 0"/><path d="M12 8a6 6 0 0 0-6 6"/><path d="M12 8a6 6 0 0 1 6 6"/><circle cx="12" cy="5" r="2"/></svg>
+                    <div class="stat-card-icon" style="background: #fef3c7; color: #d97706; width: 40px; height: 40px; border-radius: 10px;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
                     </div>
                     <div>
                         <p class="stat-card-label" style="font-weight: 600; color: #64748b; font-size: 11px; margin-bottom: 2px;">Perkebunan</p>
@@ -275,7 +275,7 @@
                 {{-- UMKM --}}
                 <article class="stat-card" style="border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px;">
                     <div class="stat-card-icon" style="background: #f3e8ff; color: #7e22ce; width: 40px; height: 40px; border-radius: 10px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
                     </div>
                     <div>
                         <p class="stat-card-label" style="font-weight: 600; color: #64748b; font-size: 11px; margin-bottom: 2px;">UMKM</p>
@@ -293,7 +293,7 @@
                 {{-- Pariwisata --}}
                 <article class="stat-card" style="border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px;">
                     <div class="stat-card-icon" style="background: #fce7f3; color: #db2777; width: 40px; height: 40px; border-radius: 10px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
                     </div>
                     <div>
                         <p class="stat-card-label" style="font-weight: 600; color: #64748b; font-size: 11px; margin-bottom: 2px;">Pariwisata</p>
