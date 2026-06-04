@@ -32,6 +32,8 @@ class FeaturePageSplitTest extends TestCase
             '/umkm/products',
             '/umkm/orders',
             '/umkm/reports',
+            '/pasar-desa',
+            '/rantai-pasok-mbg',
             '/mbg/orders',
             '/mbg/suppliers',
             '/mbg/distributions',

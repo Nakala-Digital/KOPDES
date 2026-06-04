@@ -82,13 +82,13 @@
                 <x-sidebar-icon name="umkm" />
                 <span>UMKM & Produk</span>
             </a>
-            <a href="{{ route('umkm.index') }}" class="sidebar-link">
+            <a href="{{ route('pasar-desa.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="pasar-desa" />
                 <span>Pasar Desa</span>
             </a>
 
             <p class="sidebar-category">Supply Chain & MBG</p>
-            <a href="{{ route('mbg.index') }}" class="sidebar-link">
+            <a href="{{ route('rantai-pasok-mbg.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="rantai-pasok" />
                 <span>Rantai Pasok MBG</span>
             </a>
