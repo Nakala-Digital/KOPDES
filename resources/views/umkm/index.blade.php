@@ -21,97 +21,91 @@
     <div class="sidebar-overlay" data-sidebar-overlay></div>
 
     <aside class="sidebar umkm-sidebar" data-sidebar>
-        <div class="sidebar-brand">
-            <div class="sidebar-brand-icon">
-                <svg viewBox="0 0 40 40" fill="none">
-                    <rect width="40" height="40" rx="10" fill="#2d5cf6"/>
-                    <path d="M12 10h4l6 10-6 10h-4l6-10-6-10z" fill="#fff"/>
-                    <path d="M18 10h4l6 10-6 10h-4l6-10-6-10z" fill="rgba(255,255,255,0.5)"/>
-                </svg>
-            </div>
-            <div class="sidebar-brand-text" data-sidebar-brand-text>
-                <h1>DesaHub</h1>
-                <p>Ekosistem Ekonomi Desa</p>
-            </div>
+        {{-- Brand --}}
+        <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
+            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
         </div>
 
+        {{-- Navigation --}}
         <nav class="sidebar-nav">
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href="{{ route('dashboard') }}" class="sidebar-link {{ request()->routeIs('dashboard*') ? 'active' : '' }}">
                 <x-sidebar-icon name="dashboard" />
                 <span>Dashboard</span>
             </a>
 
             <p class="sidebar-category">Data & Informasi</p>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link">
+            <a href="{{ route('pendataan.index') }}" class="sidebar-link {{ request()->routeIs('pendataan.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="pendataan-desa" />
                 <span>Pendataan Desa</span>
             </a>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link">
+            <a href="{{ route('penduduk.index') }}" class="sidebar-link {{ request()->routeIs('penduduk.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="penduduk" />
                 <span>Penduduk</span>
             </a>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link">
+            <a href="{{ route('potensi.index') }}" class="sidebar-link {{ request()->routeIs('potensi.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="potensi-desa" />
                 <span>Potensi Desa</span>
             </a>
 
             <p class="sidebar-category">Kelembagaan</p>
-            <a href="{{ route('kopdes.index') }}" class="sidebar-link">
+            <a href="{{ route('kopdes.index') }}" class="sidebar-link {{ request()->routeIs('kopdes.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="kopdes" />
                 <span>Kopdes/KDMP</span>
             </a>
-            <a href="{{ route('bumdes.index') }}" class="sidebar-link">
+            <a href="{{ route('bumdes.index') }}" class="sidebar-link {{ request()->routeIs('bumdes.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="bumdes" />
                 <span>BUMDes</span>
             </a>
 
             <p class="sidebar-category">Ekonomi</p>
-            <a href="{{ route('umkm.index') }}" class="sidebar-link active">
+            <a href="{{ route('umkm.index') }}" class="sidebar-link {{ request()->routeIs('umkm.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="umkm" />
                 <span>UMKM & Produk</span>
             </a>
-            <a href="{{ route('pasar-desa.index') }}" class="sidebar-link">
+            <a href="{{ route('pasar-desa.index') }}" class="sidebar-link {{ request()->routeIs('pasar-desa.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="pasar-desa" />
                 <span>Pasar Desa</span>
             </a>
 
             <p class="sidebar-category">Supply Chain & MBG</p>
-            <a href="{{ route('rantai-pasok-mbg.index') }}" class="sidebar-link">
+            <a href="{{ route('rantai-pasok-mbg.index') }}" class="sidebar-link {{ request()->routeIs('rantai-pasok-mbg.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="rantai-pasok" />
                 <span>Rantai Pasok MBG</span>
             </a>
-            <a href="{{ route('gudang-logistik.index') }}" class="sidebar-link">
+            <a href="{{ route('gudang-logistik.index') }}" class="sidebar-link {{ request()->routeIs('gudang-logistik.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="gudang" />
                 <span>Gudang & Logistik</span>
             </a>
-            <a href="{{ route('penerima-manfaat.index') }}" class="sidebar-link">
+            <a href="{{ route('penerima-manfaat.index') }}" class="sidebar-link {{ request()->routeIs('penerima-manfaat.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="penerima-manfaat" />
                 <span>Penerima Manfaat</span>
             </a>
 
             <p class="sidebar-category">Keuangan</p>
-            <a href="{{ route('keuangan.index') }}" class="sidebar-link">
+            <a href="{{ route('keuangan.index') }}" class="sidebar-link {{ request()->routeIs('keuangan.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="keuangan" />
                 <span>Keuangan & Transaksi</span>
             </a>
 
             <p class="sidebar-category">Laporan</p>
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href="{{ route('analitik.index') }}" class="sidebar-link {{ request()->routeIs('analitik.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="dashboard-analitik" />
                 <span>Dashboard & Analitik</span>
             </a>
-            <a href="{{ route('dashboard') }}" class="sidebar-link">
+            <a href="{{ route('laporan.index') }}" class="sidebar-link {{ request()->routeIs('laporan.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="laporan" />
                 <span>Laporan</span>
             </a>
+            
+            <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></div>
 
-            <span class="umkm-sidebar-divider" aria-hidden="true"></span>
-            <a href="#" class="sidebar-link">
+            <a href="{{ route('pengaturan.index') }}" class="sidebar-link {{ request()->routeIs('pengaturan.*') ? 'active' : '' }}">
                 <x-sidebar-icon name="pengaturan" />
                 <span>Pengaturan</span>
             </a>
         </nav>
 
+        {{-- Collapse Button --}}
         <button class="sidebar-collapse-btn" data-sidebar-toggle>
             <x-sidebar-icon name="collapse" />
             <span data-sidebar-brand-text>Persempit Menu</span>

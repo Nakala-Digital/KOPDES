@@ -20,28 +20,33 @@
 <div class="sidebar-overlay" data-sidebar-overlay></div>
 
 <aside class="sidebar" data-sidebar>
-    <div class="sidebar-brand">
-        <div class="sidebar-brand-icon">
-            <svg viewBox="0 0 40 40" fill="none">
-                <rect width="40" height="40" rx="10" fill="#2d5cf6"/>
-                <path d="M12 10h4l6 10-6 10h-4l6-10-6-10z" fill="#fff"/>
-                <path d="M18 10h4l6 10-6 10h-4l6-10-6-10z" fill="rgba(255,255,255,0.5)"/>
-            </svg>
-        </div>
-        <div class="sidebar-brand-text" data-sidebar-brand-text>
-            <h1>DesaHub</h1>
-            <p>Ekosistem Ekonomi Desa</p>
-        </div>
+    {{-- Brand --}}
+    <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
+        <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
     </div>
 
+    {{-- Navigation --}}
     <nav class="sidebar-nav">
-        <a href="{{ route('dashboard') }}" class="sidebar-link"><x-sidebar-icon name="dashboard" /><span>Dashboard</span></a>
+        <a href="{{ route('dashboard') }}" class="sidebar-link {{ request()->routeIs('dashboard*') ? 'active' : '' }}">
+            <x-sidebar-icon name="dashboard" />
+            <span>Dashboard</span>
+        </a>
+
         <p class="sidebar-category">Data & Informasi</p>
-        <a href="{{ route('pendataan.index') }}" class="sidebar-link"><x-sidebar-icon name="pendataan-desa" /><span>Pendataan Desa</span></a>
-        <a href="{{ route('pendataan.index') }}" class="sidebar-link"><x-sidebar-icon name="penduduk" /><span>Penduduk</span></a>
-        <a href="{{ route('pendataan.index') }}" class="sidebar-link"><x-sidebar-icon name="potensi-desa" /><span>Potensi Desa</span></a>
+        <a href="{{ route('pendataan.index') }}" class="sidebar-link {{ request()->routeIs('pendataan.*') ? 'active' : '' }}">
+            <x-sidebar-icon name="pendataan-desa" />
+            <span>Pendataan Desa</span>
+        </a>
+        <a href="{{ route('penduduk.index') }}" class="sidebar-link {{ request()->routeIs('penduduk.*') ? 'active' : '' }}">
+            <x-sidebar-icon name="penduduk" />
+            <span>Penduduk</span>
+        </a>
+        <a href="{{ route('potensi.index') }}" class="sidebar-link {{ request()->routeIs('potensi.*') ? 'active' : '' }}">
+            <x-sidebar-icon name="potensi-desa" />
+            <span>Potensi Desa</span>
+        </a>
+
         <p class="sidebar-category">Kelembagaan</p>
-        <a href="{{ route('kopdes.index') }}" class="sidebar-link"><x-sidebar-icon name="kopdes" /><span>Kopdes/KDMP</span></a>
         <a href="{{ route('bumdes.index') }}" class="sidebar-link"><x-sidebar-icon name="bumdes" /><span>BUMDes</span></a>
         <p class="sidebar-category">Ekonomi</p>
         <a href="{{ route('umkm.index') }}" class="sidebar-link"><x-sidebar-icon name="umkm" /><span>UMKM & Produk</span></a>
