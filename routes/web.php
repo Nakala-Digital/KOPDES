@@ -79,7 +79,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/umkm/orders/overdue-alerts', [UmkmController::class, 'overdueAlerts'])->name('umkm.orders.overdue-alerts');
     Route::post('/umkm/reports/sales', [UmkmController::class, 'salesReport'])->name('umkm.reports.sales');
 
+    Route::view('/pasar-desa', 'pasar-desa.index')->name('pasar-desa.index');
+
     Route::get('/mbg', [MbgController::class, 'index'])->name('mbg.index');
+    Route::view('/rantai-pasok-mbg', 'rantai-pasok-mbg.index')->name('rantai-pasok-mbg.index');
     Route::get('/mbg/orders', [MbgController::class, 'index'])->defaults('feature', 'orders')->name('mbg.orders.page');
     Route::get('/mbg/suppliers', [MbgController::class, 'index'])->defaults('feature', 'suppliers')->name('mbg.suppliers.page');
     Route::get('/mbg/distributions', [MbgController::class, 'index'])->defaults('feature', 'distributions')->name('mbg.distributions.page');
