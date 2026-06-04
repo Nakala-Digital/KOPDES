@@ -83,6 +83,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/mbg', [MbgController::class, 'index'])->name('mbg.index');
     Route::view('/rantai-pasok-mbg', 'rantai-pasok-mbg.index')->name('rantai-pasok-mbg.index');
+    Route::view('/gudang-logistik', 'gudang-logistik.index')->name('gudang-logistik.index');
+    Route::view('/penerima-manfaat', 'penerima-manfaat.index')->name('penerima-manfaat.index');
     Route::get('/mbg/orders', [MbgController::class, 'index'])->defaults('feature', 'orders')->name('mbg.orders.page');
     Route::get('/mbg/suppliers', [MbgController::class, 'index'])->defaults('feature', 'suppliers')->name('mbg.suppliers.page');
     Route::get('/mbg/distributions', [MbgController::class, 'index'])->defaults('feature', 'distributions')->name('mbg.distributions.page');

@@ -3679,6 +3679,10 @@ body {
 
 .mbg-chain-btn {
     height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border-radius: 7px;
     padding: 0 18px;
     border: 1.5px solid #1267ff;
@@ -3686,6 +3690,12 @@ body {
     font-size: 12px;
     font-weight: 800;
     cursor: pointer;
+}
+
+.mbg-chain-btn svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
 }
 
 .mbg-chain-btn-outline {
@@ -3751,6 +3761,12 @@ body {
     justify-content: center;
     border-radius: 10px;
     font-size: 24px;
+}
+
+.mbg-chain-kpi-icon svg {
+    width: 25px;
+    height: 25px;
+    stroke-width: 2.2;
 }
 
 .mbg-chain-kpi-icon.orange { background: #fff3e7; color: #f47d1f; }
@@ -3838,6 +3854,32 @@ body {
 
 .mbg-chain-line-chart {
     height: 178px;
+}
+
+.warehouse-page .mbg-chain-chart-card:first-child {
+    padding: 18px 24px 14px;
+}
+
+.warehouse-page .mbg-chain-chart-card:first-child .mbg-chain-legend {
+    margin: 12px 0 0;
+}
+
+.warehouse-page .mbg-chain-chart-card:first-child .mbg-chain-line-chart {
+    height: 184px;
+}
+
+.supply-chain-page .mbg-chain-chart-card:first-child {
+    height: 268px;
+    padding: 18px 24px 14px;
+}
+
+.supply-chain-page .mbg-chain-chart-card:first-child .mbg-chain-legend {
+    margin: 12px 0 0;
+    gap: 30px;
+}
+
+.supply-chain-page .mbg-chain-chart-card:first-child .mbg-chain-line-chart {
+    height: 204px;
 }
 
 .mbg-chain-donut-layout {
@@ -3932,9 +3974,34 @@ body {
 .mbg-supplier-table th:last-child, .mbg-supplier-table td:last-child { width: 16%; }
 .mbg-distribution-table th:nth-child(2), .mbg-distribution-table td:nth-child(2) { width: 22%; }
 .mbg-distribution-table th:nth-child(3), .mbg-distribution-table td:nth-child(3) { width: 24%; }
-.mbg-distribution-table th:nth-child(4), .mbg-distribution-table td:nth-child(4) { width: 16%; }
-.mbg-distribution-table th:nth-child(5), .mbg-distribution-table td:nth-child(5) { width: 16%; }
-.mbg-distribution-table th:last-child, .mbg-distribution-table td:last-child { width: 16%; }
+.mbg-distribution-table th:nth-child(4), .mbg-distribution-table td:nth-child(4) { width: 15%; }
+.mbg-distribution-table th:nth-child(5), .mbg-distribution-table td:nth-child(5) { width: 15%; }
+.mbg-distribution-table th:last-child, .mbg-distribution-table td:last-child { width: 18%; }
+.warehouse-stock-table th:first-child,
+.warehouse-stock-table td:first-child,
+.warehouse-activity-table th:first-child,
+.warehouse-activity-table td:first-child { width: 6%; text-align: center; }
+.warehouse-stock-table th:nth-child(2), .warehouse-stock-table td:nth-child(2) { width: 25%; }
+.warehouse-stock-table th:nth-child(3), .warehouse-stock-table td:nth-child(3) { width: 23%; }
+.warehouse-stock-table th:nth-child(4), .warehouse-stock-table td:nth-child(4) { width: 18%; }
+.warehouse-stock-table th:nth-child(5), .warehouse-stock-table td:nth-child(5) { width: 12%; }
+.warehouse-stock-table th:last-child, .warehouse-stock-table td:last-child { width: 16%; }
+.warehouse-activity-table th:nth-child(2), .warehouse-activity-table td:nth-child(2) { width: 22%; }
+.warehouse-activity-table th:nth-child(3), .warehouse-activity-table td:nth-child(3) { width: 20%; }
+.warehouse-activity-table th:nth-child(4), .warehouse-activity-table td:nth-child(4) { width: 24%; }
+.warehouse-activity-table th:last-child, .warehouse-activity-table td:last-child { width: 20%; }
+.beneficiary-priority-table th:first-child,
+.beneficiary-priority-table td:first-child,
+.beneficiary-activity-table th:first-child,
+.beneficiary-activity-table td:first-child { width: 6%; text-align: center; }
+.beneficiary-priority-table th:nth-child(2), .beneficiary-priority-table td:nth-child(2) { width: 32%; }
+.beneficiary-priority-table th:nth-child(3), .beneficiary-priority-table td:nth-child(3) { width: 15%; }
+.beneficiary-priority-table th:nth-child(4), .beneficiary-priority-table td:nth-child(4) { width: 32%; }
+.beneficiary-priority-table th:last-child, .beneficiary-priority-table td:last-child { width: 15%; }
+.beneficiary-activity-table th:nth-child(2), .beneficiary-activity-table td:nth-child(2) { width: 20%; }
+.beneficiary-activity-table th:nth-child(3), .beneficiary-activity-table td:nth-child(3) { width: 31%; }
+.beneficiary-activity-table th:nth-child(4), .beneficiary-activity-table td:nth-child(4) { width: 22%; }
+.beneficiary-activity-table th:last-child, .beneficiary-activity-table td:last-child { width: 21%; }
 
 .mbg-chain-status {
     min-width: 66px;
@@ -3946,6 +4013,20 @@ body {
     border-radius: 6px;
     font-size: 9px;
     font-weight: 800;
+}
+
+.warehouse-activity-table .mbg-chain-status {
+    min-width: 92px;
+}
+
+.mbg-distribution-table .mbg-chain-status {
+    min-width: 92px;
+    padding: 0 8px;
+    font-size: 8.6px;
+}
+
+.beneficiary-activity-table .mbg-chain-status {
+    min-width: 96px;
 }
 
 .mbg-chain-status.active,
