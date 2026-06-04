@@ -10,6 +10,7 @@ use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\AnalitikController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\PotensiController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/pendataan/aset', [PendataanController::class, 'storeAsset'])->name('pendataan.aset.store');
     Route::post('/pendataan/umkm', [PendataanController::class, 'storeUmkm'])->name('pendataan.umkm.store');
     Route::post('/pendataan/export', [PendataanController::class, 'export'])->name('pendataan.export');
+
+    Route::get('/penduduk', [PendudukController::class, 'index'])->name('penduduk.index');
 
     Route::get('/kopdes', [KopdesController::class, 'index'])->name('kopdes.index');
     Route::get('/kopdes/members', [KopdesController::class, 'index'])->defaults('feature', 'members')->name('kopdes.members.page');
@@ -77,7 +80,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/umkm/orders/overdue-alerts', [UmkmController::class, 'overdueAlerts'])->name('umkm.orders.overdue-alerts');
     Route::post('/umkm/reports/sales', [UmkmController::class, 'salesReport'])->name('umkm.reports.sales');
 
+    Route::view('/pasar-desa', 'pasar-desa.index')->name('pasar-desa.index');
+
     Route::get('/mbg', [MbgController::class, 'index'])->name('mbg.index');
+    Route::view('/rantai-pasok-mbg', 'rantai-pasok-mbg.index')->name('rantai-pasok-mbg.index');
+    Route::view('/gudang-logistik', 'gudang-logistik.index')->name('gudang-logistik.index');
+    Route::view('/penerima-manfaat', 'penerima-manfaat.index')->name('penerima-manfaat.index');
     Route::get('/mbg/orders', [MbgController::class, 'index'])->defaults('feature', 'orders')->name('mbg.orders.page');
     Route::get('/mbg/suppliers', [MbgController::class, 'index'])->defaults('feature', 'suppliers')->name('mbg.suppliers.page');
     Route::get('/mbg/distributions', [MbgController::class, 'index'])->defaults('feature', 'distributions')->name('mbg.distributions.page');
