@@ -77,7 +77,7 @@
                 <x-sidebar-icon name="penduduk" />
                 <span>Penduduk</span>
             </a>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link">
+            <a href="{{ route('potensi.index') }}" class="sidebar-link">
                 <x-sidebar-icon name="potensi-desa" />
                 <span>Potensi Desa</span>
             </a>

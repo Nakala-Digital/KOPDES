@@ -11,6 +11,7 @@ use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\AnalitikController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\PotensiController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -94,6 +95,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/analitik', [AnalitikController::class, 'index'])->name('analitik.index');
     Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
     Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+    Route::get('/potensi', [PotensiController::class, 'index'])->name('potensi.index');
 });
 
 Route::post('/auth/pin-reset/request', [AuthController::class, 'requestPinReset'])->name('auth.pin-reset.request');
