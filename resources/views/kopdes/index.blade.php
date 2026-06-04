@@ -313,11 +313,11 @@
                     <div style="margin-bottom:16px;">
                         <h2 style="font-size:14px; font-weight:600; color:#1e293b; margin:0;">Komposisi Simpanan</h2>
                     </div>
-                    <div style="display:flex; flex-direction:row; gap:16px; align-items:center;">
-                        <div style="width:110px; height:110px; position:relative;">
+                    <div style="display:flex; flex-direction:row; gap:48px; align-items:center; padding:16px 24px;">
+                        <div style="width:160px; height:160px; position:relative;">
                             <canvas id="donutChart"></canvas>
                         </div>
-                        <div style="flex:1; display:flex; flex-direction:column; gap:12px; font-size:11px; color:#475569; font-weight:500;">
+                        <div style="display:flex; flex-direction:column; gap:16px; font-size:12px; color:#475569; font-weight:500; width: 200px;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
                                 <div style="display:flex; align-items:center; gap:6px;"><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#3b82f6;"></span> Simpanan Pokok</div>
                                 <span style="color:#1e293b; font-weight:600;">25%</span>
