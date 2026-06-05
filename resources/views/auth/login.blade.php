@@ -23,10 +23,10 @@
     </style>
 </head>
 <body class="h-screen w-screen overflow-hidden antialiased text-[#001f4f]">
-    
+
     <!-- Main Content Area -->
     <main class="absolute top-0 left-0 right-0 bottom-[94px] overflow-hidden bg-[#f4f7fb]">
-        
+
         <!-- Left Background Layer -->
         <div class="absolute top-0 left-0 bottom-0 w-[66%] z-0 bg-cover bg-bottom bg-no-repeat" style="background-image: url('{{ asset('assets/desahub/background-login.png') }}');"></div>
 
@@ -36,7 +36,7 @@
                 <!-- LEFT RIBBON (Thin, extremely short, ends just past Masyarakat) -->
                 <path fill="#e11f2d" d="M 0,150 C 150,160 250,180 330,190 C 250,185 150,175 0,170 Z" />
                 <path fill="#ffffff" d="M 0,170 C 150,175 250,185 330,190 C 250,195 150,190 0,190 Z" />
-                
+
                 <!-- RIGHT RIBBON (Thin, extremely short, ends at Rantai Pasok & MBG icon) -->
                 <path fill="#e11f2d" d="M 1440,100 C 1200,140 1000,180 800,190 C 1000,190 1200,160 1440,130 Z" />
                 <path fill="#ffffff" d="M 1440,130 C 1200,160 1000,190 800,190 C 1000,200 1200,180 1440,160 Z" />
@@ -45,10 +45,10 @@
 
         <!-- Left Content -->
         <div class="absolute top-[35px] left-0 w-[55%] z-20 flex flex-col items-center">
-            
+
             <!-- Logo DesaHub (Enlarged and shifted slightly left) -->
             <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub" class="w-[620px] max-w-[90%] -ml-6 object-contain drop-shadow-sm">
-            
+
             <!-- Description -->
             <p class="-mt-3 max-w-[550px] -ml-6 text-center text-[16px] font-medium leading-[1.7] text-[#2c3e50]">
                 Menghubungkan masyarakat, Kopdes/KDMP, BUMDes, UMKM,<br>
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-            
+
         <!-- Badge -->
         <div class="absolute bottom-[50px] left-[60px] z-20 flex items-center gap-4 rounded-[18px] bg-[#001f4f] px-6 py-4 shadow-2xl scale-105 origin-bottom-left">
             <div class="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-white text-[#001f4f]">
@@ -105,7 +105,7 @@
 
         <!-- Right White Card Layer -->
         <div class="absolute bottom-[12px] right-[48px] top-[28px] z-30 flex w-[44vw] min-w-[680px] max-w-[840px] flex-col rounded-[24px] bg-white shadow-[0_8px_40px_rgb(0,0,0,0.08)]">
-            
+
             <!-- Nakala Logo inside Card -->
             <div class="absolute right-[70px] top-[45px]">
                 <img src="{{ asset('assets/desahub/logo-nakala-transparent.png') }}" alt="Nakala Digital" class="w-[180px] object-contain">
@@ -113,7 +113,7 @@
 
             <!-- Content inside the card -->
             <!-- We will use a relatively positioned container to easily set the exact offsets mentioned: 150px and 260px from top -->
-            
+
             <!-- Title and Subtitle -->
             <div class="absolute left-0 right-0 top-[150px] text-center">
                 <h1 class="text-[30px] font-bold text-[#001f4f]">Selamat Datang Kembali</h1>
@@ -122,7 +122,7 @@
 
             <!-- Form Wrapper -->
             <div class="absolute left-0 right-0 top-[260px] mx-auto flex w-[610px] max-w-[72%] flex-col">
-                
+
                 @if (isset($errors) && $errors->any())
                     <div class="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-[14.5px] font-semibold text-red-700">
                         {{ $errors->first() }}
@@ -131,7 +131,7 @@
 
                 <form method="POST" action="{{ route('login') }}" class="flex w-full flex-col gap-6">
                     @csrf
-                    
+
                     <!-- Username/Email Field -->
                     <div>
                         <label for="identifier" class="mb-1.5 block text-[14.5px] font-bold text-[#001f4f]">Email atau Username</label>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="flex items-center gap-[10px] xl:gap-[12px]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#10d5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 xl:h-[22px] xl:w-[22px] 2xl:h-6 2xl:w-6"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    milzam.zihni@romulus.digital
+                    contact@nakala.digital
                 </div>
                 <div class="flex items-center gap-[10px] xl:gap-[12px]">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#10d5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 xl:h-[22px] xl:w-[22px] 2xl:h-6 2xl:w-6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
