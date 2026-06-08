@@ -175,8 +175,8 @@
     </header>
 
     {{-- ===== MAIN CONTENT ===== --}}
-    <main class="main-content" data-main-content>
-        <div class="main-inner">
+<main class="main-content fin-main-content" data-main-content>
+        <div class="main-inner fin-main-inner">
             {{-- Kopdes Header --}}
             <div class="greeting-header">
                 <div>
