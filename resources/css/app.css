@@ -412,12 +412,19 @@ body {
     margin-left: 260px;
     padding: 54px 20px 4px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     transition: margin-left 0.2s ease;
 }
 
 .main-inner {
+    flex: 1;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ── Greeting Header ── */
@@ -4276,3 +4283,60 @@ body {
 .ana-insight-card { border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
 .ana-insight-title { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
 .ana-insight-val { font-size: 20px; font-weight: 700; color: var(--sidebar-bg); margin-bottom: 4px; }
+
+/* Unified footer: fixed visual size, pushed to the bottom of short pages */
+.dashboard-footer,
+.umkm-footer,
+.pasar-footer,
+.mbg-chain-footer {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: auto;
+    padding: 14px 0 18px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.footer-left,
+.footer-right,
+.footer-partner-text {
+    font-size: 12px;
+}
+
+.footer-right {
+    justify-content: flex-end;
+    gap: 12px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.footer-right img,
+.dashboard-footer img {
+    height: 36px !important;
+    width: auto !important;
+    object-fit: contain;
+    margin-left: 0 !important;
+}
+
+@media (max-width: 720px) {
+    .dashboard-footer,
+    .umkm-footer,
+    .pasar-footer,
+    .mbg-chain-footer {
+        min-height: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-right {
+        justify-content: flex-start;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+}
