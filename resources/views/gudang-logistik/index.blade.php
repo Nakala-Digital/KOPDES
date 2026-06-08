@@ -47,7 +47,11 @@
         </a>
 
         <p class="sidebar-category">Kelembagaan</p>
-        <a href="{{ route('bumdes.index') }}" class="sidebar-link"><x-sidebar-icon name="bumdes" /><span>BUMDes</span></a>
+        <a href="{{ route('kopdes.index') }}" class="sidebar-link {{ request()->routeIs('kopdes.*') ? 'active' : '' }}">
+            <x-sidebar-icon name="kopdes" />
+            <span>Kopdes/KDMP</span>
+        </a>
+        <a href="{{ route('bumdes.index') }}" class="sidebar-link {{ request()->routeIs('bumdes.*') ? 'active' : '' }}"><x-sidebar-icon name="bumdes" /><span>BUMDes</span></a>
         <p class="sidebar-category">Ekonomi</p>
         <a href="{{ route('umkm.index') }}" class="sidebar-link"><x-sidebar-icon name="umkm" /><span>UMKM & Produk</span></a>
         <a href="{{ route('pasar-desa.index') }}" class="sidebar-link"><x-sidebar-icon name="pasar-desa" /><span>Pasar Desa</span></a>
