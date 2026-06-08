@@ -1,8 +1,14 @@
 <div class="sidebar-overlay" data-sidebar-overlay></div>
 
 <aside class="sidebar" data-sidebar>
-    <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
-        <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
+    <div class="sidebar-brand">
+        <div class="sidebar-brand-mark" aria-hidden="true">
+            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="">
+        </div>
+        <div class="sidebar-brand-copy" data-sidebar-brand-text>
+            <strong><span>Desa</span>Hub</strong>
+            <small>Ekosistem Ekonomi Desa</small>
+        </div>
     </div>
 
     <nav class="sidebar-nav">
