@@ -15,123 +15,8 @@
     $villageName = $user->village_name ?? 'Desa Sukamaju';
     $tabs = ['Ringkasan', 'Permintaan', 'Supplier', 'Distribusi', 'Sekolah Penerima', 'Laporan'];
 @endphp
-
-<div class="sidebar-overlay" data-sidebar-overlay></div>
-
-    <aside class="sidebar" data-sidebar>
-        {{-- Brand --}}
-        <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
-            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
-        </div>
-
-        {{-- Navigation --}}
-        <nav class="sidebar-nav">
-            <a href="{{ route('dashboard') }}" class="sidebar-link {{ request()->routeIs('dashboard*') ? 'active' : '' }}">
-                <x-sidebar-icon name="dashboard" />
-                <span>Dashboard</span>
-            </a>
-
-            <p class="sidebar-category">Data & Informasi</p>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link {{ request()->routeIs('pendataan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pendataan-desa" />
-                <span>Pendataan Desa</span>
-            </a>
-            <a href="{{ route('penduduk.index') }}" class="sidebar-link {{ request()->routeIs('penduduk.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="penduduk" />
-                <span>Penduduk</span>
-            </a>
-            <a href="{{ route('potensi.index') }}" class="sidebar-link {{ request()->routeIs('potensi.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="potensi-desa" />
-                <span>Potensi Desa</span>
-            </a>
-
-            <p class="sidebar-category">Kelembagaan</p>
-            <a href="{{ route('kopdes.index') }}" class="sidebar-link {{ request()->routeIs('kopdes.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="kopdes" />
-                <span>Kopdes/KDMP</span>
-            </a>
-            <a href="{{ route('bumdes.index') }}" class="sidebar-link {{ request()->routeIs('bumdes.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="bumdes" />
-                <span>BUMDes</span>
-            </a>
-
-            <p class="sidebar-category">Ekonomi</p>
-            <a href="{{ route('umkm.index') }}" class="sidebar-link {{ request()->routeIs('umkm.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="umkm" />
-                <span>UMKM & Produk</span>
-            </a>
-            <a href="{{ route('pasar-desa.index') }}" class="sidebar-link {{ request()->routeIs('pasar-desa.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pasar-desa" />
-                <span>Pasar Desa</span>
-            </a>
-
-            <p class="sidebar-category">Supply Chain & MBG</p>
-            <a href="{{ route('rantai-pasok-mbg.index') }}" class="sidebar-link {{ request()->routeIs('rantai-pasok-mbg.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="rantai-pasok" />
-                <span>Rantai Pasok MBG</span>
-            </a>
-            <a href="{{ route('gudang-logistik.index') }}" class="sidebar-link {{ request()->routeIs('gudang-logistik.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="gudang" />
-                <span>Gudang & Logistik</span>
-            </a>
-            <a href="{{ route('penerima-manfaat.index') }}" class="sidebar-link {{ request()->routeIs('penerima-manfaat.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="penerima-manfaat" />
-                <span>Penerima Manfaat</span>
-            </a>
-
-            <p class="sidebar-category">Keuangan</p>
-            <a href="{{ route('keuangan.index') }}" class="sidebar-link {{ request()->routeIs('keuangan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="keuangan" />
-                <span>Keuangan & Transaksi</span>
-            </a>
-
-            <p class="sidebar-category">Laporan</p>
-            <a href="{{ route('analitik.index') }}" class="sidebar-link {{ request()->routeIs('analitik.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="dashboard-analitik" />
-                <span>Dashboard & Analitik</span>
-            </a>
-            <a href="{{ route('laporan.index') }}" class="sidebar-link {{ request()->routeIs('laporan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="laporan" />
-                <span>Laporan</span>
-            </a>
-            
-            <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></div>
-
-            <a href="{{ route('pengaturan.index') }}" class="sidebar-link {{ request()->routeIs('pengaturan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pengaturan" />
-                <span>Pengaturan</span>
-            </a>
-        </nav>
-
-        {{-- Collapse Button --}}
-        <button class="sidebar-collapse-btn" data-sidebar-toggle>
-            <x-sidebar-icon name="collapse" />
-            <span data-sidebar-brand-text>Persempit Menu</span>
-        </button>
-    </aside>
-
-<header class="topbar" data-topbar>
-    <div class="topbar-left">
-        <button class="topbar-hamburger" aria-label="Toggle Menu" data-sidebar-toggle>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
-                <line x1="4" x2="15" y1="7" y2="7"/><line x1="4" x2="12" y1="12" y2="12"/><line x1="4" x2="18" y1="17" y2="17"/>
-            </svg>
-        </button>
-        <span class="topbar-title">Rantai Pasok MBG</span>
-    </div>
-    <div class="topbar-right">
-        <button class="topbar-icon-btn" aria-label="Help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></button>
-        <button class="topbar-icon-btn" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="notification-badge">3</span></button>
-        <div class="topbar-user" id="mbg-chain-user-trigger">
-            <img src="https://i.pravatar.cc/150?img=12" alt="User Avatar" class="topbar-user-avatar" />
-            <div class="topbar-user-info"><div class="topbar-user-name">Kepala Desa</div><div class="topbar-user-role">{{ $villageName }}</div></div>
-            <svg class="topbar-user-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            <div class="user-dropdown" id="mbg-chain-user-dropdown">
-                <form method="POST" action="{{ route('logout') }}">@csrf<button type="submit">Logout</button></form>
-            </div>
-        </div>
-    </div>
-</header>
+    <x-app-sidebar />
+    <x-app-topbar title="Rantai Pasok MBG" />
 
 <main class="main-content fin-main-content" data-main-content>
         <div class="main-inner fin-main-inner">
@@ -207,12 +92,7 @@
                 <a href="#" class="mbg-chain-table-link">Lihat Semua Pengiriman <span>›</span></a>
             </div>
         </section>
-
-        <footer class="mbg-chain-footer">
-            <span>DesaHub - Ekosistem Ekonomi Desa</span>
-            <span>&copy; 2025 DesaHub. All rights reserved.</span>
-            <span>Nakala Digital&nbsp;&nbsp; x &nbsp;&nbsp;Romulus Digital<br>Strategic Partner - Singapore/Vietnam</span>
-        </footer>
+            <x-app-footer />
     </div>
 </main>
 

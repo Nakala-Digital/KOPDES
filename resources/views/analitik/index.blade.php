@@ -20,167 +20,12 @@
     @endphp
 
     {{-- Sidebar Overlay (mobile) --}}
-    <div class="sidebar-overlay" data-sidebar-overlay></div>
+    <x-app-sidebar />
 
-    {{-- ===== SIDEBAR ===== --}}
-    <aside class="sidebar" data-sidebar>
-        {{-- Brand --}}
-        <div class="sidebar-brand" style="display: block; padding: 24px 20px 16px;">
-            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="DesaHub Logo" style="width: 140px; height: auto; object-fit: contain; display: block;">
-        </div>
+{{-- ===== TOP BAR ===== --}}
+    <x-app-topbar :title="'Dashboard & Analitik'" />
 
-        {{-- Navigation --}}
-        <nav class="sidebar-nav">
-            <a href="{{ route('dashboard') }}" class="sidebar-link {{ request()->routeIs('dashboard*') ? 'active' : '' }}">
-                <x-sidebar-icon name="dashboard" />
-                <span>Dashboard</span>
-            </a>
-
-            <p class="sidebar-category">Data & Informasi</p>
-            <a href="{{ route('pendataan.index') }}" class="sidebar-link {{ request()->routeIs('pendataan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pendataan-desa" />
-                <span>Pendataan Desa</span>
-            </a>
-            <a href="{{ route('penduduk.index') }}" class="sidebar-link {{ request()->routeIs('penduduk.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="penduduk" />
-                <span>Penduduk</span>
-            </a>
-            <a href="{{ route('potensi.index') }}" class="sidebar-link {{ request()->routeIs('potensi.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="potensi-desa" />
-                <span>Potensi Desa</span>
-            </a>
-
-            <p class="sidebar-category">Kelembagaan</p>
-            <a href="{{ route('kopdes.index') }}" class="sidebar-link {{ request()->routeIs('kopdes.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="kopdes" />
-                <span>Kopdes/KDMP</span>
-            </a>
-            <a href="{{ route('bumdes.index') }}" class="sidebar-link {{ request()->routeIs('bumdes.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="bumdes" />
-                <span>BUMDes</span>
-            </a>
-
-            <p class="sidebar-category">Ekonomi</p>
-            <a href="{{ route('umkm.index') }}" class="sidebar-link {{ request()->routeIs('umkm.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="umkm" />
-                <span>UMKM & Produk</span>
-            </a>
-            <a href="{{ route('pasar-desa.index') }}" class="sidebar-link {{ request()->routeIs('pasar-desa.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pasar-desa" />
-                <span>Pasar Desa</span>
-            </a>
-
-            <p class="sidebar-category">Supply Chain & MBG</p>
-            <a href="{{ route('rantai-pasok-mbg.index') }}" class="sidebar-link {{ request()->routeIs('rantai-pasok-mbg.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="rantai-pasok" />
-                <span>Rantai Pasok MBG</span>
-            </a>
-            <a href="{{ route('gudang-logistik.index') }}" class="sidebar-link {{ request()->routeIs('gudang-logistik.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="gudang" />
-                <span>Gudang & Logistik</span>
-            </a>
-            <a href="{{ route('penerima-manfaat.index') }}" class="sidebar-link {{ request()->routeIs('penerima-manfaat.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="penerima-manfaat" />
-                <span>Penerima Manfaat</span>
-            </a>
-
-            <p class="sidebar-category">Keuangan</p>
-            <a href="{{ route('keuangan.index') }}" class="sidebar-link {{ request()->routeIs('keuangan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="keuangan" />
-                <span>Keuangan & Transaksi</span>
-            </a>
-
-            <p class="sidebar-category">Laporan</p>
-            <a href="{{ route('analitik.index') }}" class="sidebar-link {{ request()->routeIs('analitik.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="dashboard-analitik" />
-                <span>Dashboard & Analitik</span>
-            </a>
-            <a href="{{ route('laporan.index') }}" class="sidebar-link {{ request()->routeIs('laporan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="laporan" />
-                <span>Laporan</span>
-            </a>
-            
-            <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></div>
-
-            <a href="{{ route('pengaturan.index') }}" class="sidebar-link {{ request()->routeIs('pengaturan.*') ? 'active' : '' }}">
-                <x-sidebar-icon name="pengaturan" />
-                <span>Pengaturan</span>
-            </a>
-        </nav>
-
-        {{-- Collapse Button --}}
-        <button class="sidebar-collapse-btn" data-sidebar-toggle>
-            <x-sidebar-icon name="collapse" />
-            <span data-sidebar-brand-text>Persempit Menu</span>
-        </button>
-    </aside>
-
-    {{-- ===== TOP BAR ===== --}}
-    <header class="topbar" data-topbar>
-        <div class="topbar-left" style="display: flex; align-items: center; gap: 16px;">
-            <button class="topbar-hamburger" id="menu-toggle" aria-label="Toggle Menu" data-sidebar-toggle style="margin-right: 0;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
-                    <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="14" y1="18" y2="18"/>
-                </svg>
-            </button>
-            <div style="display: flex; flex-direction: column;">
-                <span class="topbar-title" style="margin: 0; line-height: 1.2;">Dashboard & Analitik</span>
-                <span style="font-size: 13px; color: #64748b; margin-top: 2px;">Pantau insight lintas modul, KPI strategis, dan performa desa secara real-time.</span>
-            </div>
-        </div>
-
-        <div class="topbar-right" style="display: flex; align-items: center;">
-            <div class="fin-page-actions" style="display: flex; gap: 12px; align-items: center; margin-right: 16px;">
-                <div style="display: flex; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 6px 12px; font-size: 13px; align-items: center; gap: 8px; color: var(--text-primary); cursor: pointer;">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    1 - 31 Mei 2025
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </div>
-                <div style="display: flex; background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 6px 12px; font-size: 13px; align-items: center; gap: 8px; color: var(--text-primary); cursor: pointer;">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    Semua Desa
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </div>
-                <button class="fin-btn-outline" style="height: 34px; padding: 0 12px; font-size: 13px; background: white; border: 1px solid var(--border-color); border-radius: 8px; color: var(--primary); display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                    Export Data
-                </button>
-            </div>
-            <button class="topbar-icon-btn" aria-label="Help">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
-                    </svg>
-                </button>
-                <button class="topbar-icon-btn" aria-label="Notifications" style="position: relative;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
-                    </svg>
-                <span class="notification-badge">2</span>
-            </button>
-
-            <div class="topbar-user" style="position: relative;" id="user-dropdown-trigger">
-                <img src="https://i.pravatar.cc/150?img=11" alt="User Avatar" class="topbar-user-avatar" />
-                <div class="topbar-user-info">
-                    <div class="topbar-user-name">{{ $roleLabel }}</div>
-                    <div class="topbar-user-role">{{ $villageName }}</div>
-                </div>
-                <svg class="topbar-user-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-
-                {{-- Dropdown --}}
-                <div class="user-dropdown" id="user-dropdown">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M17 17V7H7"/></svg>
-                            Logout
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    {{-- ===== MAIN CONTENT ===== --}}
+{{-- ===== MAIN CONTENT ===== --}}
     <main class="main-content fin-main-content" data-main-content>
         <div class="main-inner fin-main-inner">
 
@@ -543,33 +388,7 @@
                     </div>
                 </div>
             </section>
-
-            {{-- Footer --}}
-            <footer class="dashboard-footer" style="padding: 24px 0 16px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); margin-top: 24px;">
-                <div style="display: flex; align-items: center; gap: 60px;">
-                    <div class="footer-left" style="font-size: 12px; color: var(--text-secondary);">
-                        <span style="font-weight: 600; color: var(--sidebar-bg);">DesaHub</span> — Ekosistem Ekonomi Desa
-                    </div>
-                    
-                    <div class="footer-center" style="font-size: 12px; color: var(--text-secondary);">
-                        © 2025 DesaHub. All rights reserved.
-                    </div>
-                </div>
-
-                <div class="footer-right" style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
-                    <div class="footer-partner-text" style="text-align: right; font-size: 11px; line-height: 1.4;">
-                        <div style="font-weight: 600; color: var(--sidebar-bg);">Nakala Digital &times; Romulus Digital</div>
-                        <div style="color: var(--text-secondary);">Strategic Partner — Singapore/Vietnam</div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        {{-- Nakala Logo --}}
-                        <img src="{{ asset('assets/desahub/logo-nakala-transparent.png') }}" alt="Nakala Digital" style="height: 52px; width: auto; object-fit: contain; display: block;">
-
-                        {{-- Romulus Logo --}}
-                        <img src="{{ asset('assets/desahub/logo-romulus-biru.png') }}" alt="Romulus Digital" style="height: 52px; width: auto; object-fit: contain; display: block;">
-                    </div>
-                </div>
-            </footer>
+            <x-app-footer />
 
         </div>
     </main>

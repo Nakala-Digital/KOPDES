@@ -1,6 +1,16 @@
 import './bootstrap';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const userDropdownTrigger = document.querySelector('[data-user-dropdown-trigger]');
+    const userDropdown = document.querySelector('[data-user-dropdown]');
+
+    userDropdownTrigger?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        userDropdown?.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => userDropdown?.classList.remove('show'));
+
     const sidebar = document.querySelector('[data-sidebar]');
     const overlay = document.querySelector('[data-sidebar-overlay]');
     const content = document.querySelector('[data-main-content]');
