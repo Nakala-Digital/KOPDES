@@ -67,26 +67,52 @@ body {
 .sidebar-brand {
     display: flex;
     align-items: center;
-    gap: 11px;
-    min-height: 86px;
-    padding: 24px 18px 18px;
+    min-height: 92px;
+    padding: 16px 16px 12px;
 }
 
-.sidebar-brand-mark {
-    width: 46px;
-    height: 46px;
+.sidebar-brand-logo-wrap {
+    width: 204px;
+    min-height: 62px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
 }
 
-.sidebar-brand-mark img {
-    height: 46px;
-    width: auto;
-    max-width: none;
+.sidebar-brand-logo {
+    width: 188px;
+    max-width: 100%;
+    height: auto;
     display: block;
+}
+
+.sidebar.is-collapsed .sidebar-brand {
+    justify-content: center;
+    min-height: 76px;
+    padding: 18px 0 12px;
+}
+
+.sidebar.is-collapsed .sidebar-brand-logo-wrap {
+    width: 42px;
+    min-height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.sidebar.is-collapsed .sidebar-brand-logo {
+    width: 38px;
+    max-width: none;
 }
 
 .sidebar-brand-copy {

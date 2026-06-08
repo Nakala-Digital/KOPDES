@@ -2,12 +2,12 @@
 
 <aside class="sidebar" data-sidebar>
     <div class="sidebar-brand">
-        <div class="sidebar-brand-mark" aria-hidden="true">
-            <img src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}" alt="">
-        </div>
-        <div class="sidebar-brand-copy" data-sidebar-brand-text>
-            <strong><span>Desa</span>Hub</strong>
-            <small>Ekosistem Ekonomi Desa</small>
+        <div class="sidebar-brand-logo-wrap">
+            <img
+                src="{{ asset('assets/desahub/logo-desahub-transparent.png') }}"
+                alt="DesaHub"
+                class="sidebar-brand-logo"
+            >
         </div>
     </div>
 

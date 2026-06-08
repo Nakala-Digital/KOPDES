@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         desktopCollapsed = collapsed;
 
         if (collapsed) {
+            sidebar.classList.add('is-collapsed');
             sidebar.style.width = '72px';
             if (topbar) topbar.style.left = '72px';
             if (content) content.style.marginLeft = '72px';
         } else {
+            sidebar.classList.remove('is-collapsed');
             sidebar.style.width = '260px';
             if (topbar) topbar.style.left = '260px';
             if (content) content.style.marginLeft = '260px';
@@ -79,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setDesktopCollapsed(desktopCollapsed);
         } else {
             // Reset desktop widths to CSS defaults
+            sidebar.classList.remove('is-collapsed');
             sidebar.style.width = '';
             if (topbar) topbar.style.left = '';
             if (content) content.style.marginLeft = '';
