@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginSeeder extends Seeder
 {
-    private const DEMO_PIN = '123456';
+    private const DEMO_PIN = 'admin';
 
     public function run(): void
     {
@@ -17,7 +17,7 @@ class LoginSeeder extends Seeder
 
         $accounts = [
             ['name' => 'Super Admin', 'email' => 'superadmin@desahub.test', 'phone' => '081100000001', 'nik' => '3201010000000001', 'role' => 'super_admin', 'village_name' => 'Semua Desa'],
-            ['name' => 'Kepala Desa', 'email' => 'admin@desahub.test', 'phone' => '081100000002', 'nik' => 'admin@desahub.test', 'role' => 'admin_desa', 'village_name' => 'Desa Sukamaju'],
+            ['name' => 'Kepala Desa', 'email' => 'admin@desahub.test', 'phone' => '081100000002', 'nik' => 'admin', 'role' => 'admin_desa', 'village_name' => 'Desa Sukamaju'],
             ['name' => 'Pengurus Kopdes', 'email' => 'kopdes@desahub.test', 'phone' => '081100000003', 'nik' => '3201010000000003', 'role' => 'pengurus_kopdes', 'village_name' => 'Desa Sukamaju'],
             ['name' => 'Pengurus BUMDes', 'email' => 'bumdes@desahub.test', 'phone' => '081100000004', 'nik' => '3201010000000004', 'role' => 'pengurus_bumdes', 'village_name' => 'Desa Sukamaju'],
             ['name' => 'UMKM Petani', 'email' => 'umkm@desahub.test', 'phone' => '081100000005', 'nik' => '3201010000000005', 'role' => 'umkm_petani', 'village_name' => 'Desa Sukamaju'],
@@ -47,6 +47,6 @@ class LoginSeeder extends Seeder
             );
         }
 
-        $this->command?->info('Akun demo siap. Login pakai No. HP/NIK dan PIN '.self::DEMO_PIN.'.');
+        $this->command?->info('Akun demo siap. Login admin/admin atau pakai No. HP/NIK akun demo lain dengan PIN '.self::DEMO_PIN.'.');
     }
 }

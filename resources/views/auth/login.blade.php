@@ -141,7 +141,7 @@
                             </div>
                             <input id="identifier" name="identifier" type="text" value="{{ old('identifier') }}" required autofocus autocomplete="username"
                                    class="block h-[58px] w-full rounded-lg border border-[#cfd8e3] bg-white pl-12 pr-4 text-[16px] font-medium text-[#001f4f] placeholder-gray-400 outline-none transition focus:border-[#001f4f] focus:ring-1 focus:ring-[#001f4f]"
-                                   placeholder="Masukkan email atau username">
+                                   placeholder="admin">
                         </div>
                     </div>
 
@@ -154,7 +154,7 @@
                             </div>
                             <input id="pin" name="pin" type="password" required autocomplete="current-password"
                                    class="block h-[58px] w-full rounded-lg border border-[#cfd8e3] bg-white pl-12 pr-12 text-[16px] font-medium text-[#001f4f] placeholder-gray-400 outline-none transition focus:border-[#001f4f] focus:ring-1 focus:ring-[#001f4f]"
-                                   placeholder="Masukkan password">
+                                   placeholder="admin">
                             <div class="absolute inset-y-0 right-0 flex items-center pr-4">
                                 <button type="button" data-password-toggle class="cursor-pointer text-gray-400 hover:text-gray-600 focus:outline-none" aria-label="Tampilkan password">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
