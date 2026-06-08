@@ -527,6 +527,9 @@ body {
 }
 
 .chart-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-size: 12px;
     font-weight: 500;
     color: #16a34a;
@@ -536,8 +539,7 @@ body {
 .chart-change svg {
     width: 14px;
     height: 14px;
-    vertical-align: middle;
-    margin-right: 2px;
+    flex: 0 0 14px;
 }
 
 /* Line chart canvas */

@@ -296,7 +296,7 @@
                     <p class="chart-subtitle">Total Transaksi (Rp)</p>
                     <p class="chart-big-value">Rp 125,4 jt</p>
                     <p class="chart-change">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M17 17V7H7"/></svg>
                         +15,7% dari 6 bulan sebelumnya
                     </p>
                     <div class="line-chart-container">
