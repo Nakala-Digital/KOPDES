@@ -156,8 +156,8 @@
         </div>
     </header>
 
-    <main class="main-content pasar-main-content" data-main-content>
-        <div class="main-inner pasar-main-inner">
+    <main class="main-content fin-main-content" data-main-content>
+        <div class="main-inner fin-main-inner">
                     <section class="pasar-page-heading">
                         <div>
                             <h1>Pasar Desa</h1>

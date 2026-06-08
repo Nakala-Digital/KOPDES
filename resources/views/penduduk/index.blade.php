@@ -408,8 +408,8 @@
     </header>
 
     {{-- ===== MAIN CONTENT ===== --}}
-    <main class="main-content" data-main-content>
-        <div class="main-inner">
+    <main class="main-content fin-main-content" data-main-content>
+        <div class="main-inner fin-main-inner">
 
             {{-- Greeting --}}
             <div class="greeting-header">

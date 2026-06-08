@@ -156,8 +156,8 @@
         </div>
     </header>
 
-    <main class="main-content umkm-main-content" data-main-content>
-        <div class="main-inner umkm-main-inner">
+    <main class="main-content fin-main-content" data-main-content>
+        <div class="main-inner fin-main-inner">
             <section class="umkm-page-heading">
                 <div>
                     <h1>UMKM & Produk</h1>

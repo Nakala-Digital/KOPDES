@@ -134,8 +134,8 @@
     </div>
 </header>
 
-<main class="main-content mbg-chain-main" data-main-content>
-    <div class="main-inner mbg-chain-inner">
+<main class="main-content fin-main-content" data-main-content>
+        <div class="main-inner fin-main-inner">
         <section class="mbg-chain-heading">
             <div>
                 <h1>Penerima Manfaat</h1>
